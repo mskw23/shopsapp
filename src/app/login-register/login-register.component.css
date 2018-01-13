@@ -11,3 +11,50 @@
     height: 100%;
     transform: rotate(1deg);
 }
+
+.rect--login--inner {
+    transform: rotate(-1deg);
+}
+
+.login--button {
+    float:left;
+    margin-left: 10px;
+}
+
+.register--button {
+    float:right;
+    margin-right: 10px;
+}
+
+p {
+    transition: all 0.3s ease;
+    color: #EAEB41;
+    -webkit-text-stroke: 3px black;
+    padding: 0px 10px 0px 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.email--input {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.password--input {
+    display: block;
+    margin: 0 auto; 
+    width: 70%;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.rect--selected {
+    width: fit-content;
+    background-color: #353535;
+    transform: rotate(-1deg);
+}

@@ -10,11 +10,15 @@ export class ThumbnailComponent implements OnInit {
 
   degree: number = 0.5;
 
+
   @Input()
   imgSrc: string;
 
   @Input()
   imgAlt: string;
+
+  @Input()
+  width: string;
 
   constructor() { }
 
@@ -28,6 +32,10 @@ export class ThumbnailComponent implements OnInit {
 
   getInnerDegree() {
     return this.degree * 2+'deg';
+  }
+
+  getWidth() {
+    return this.width;
   }
 
   ngOnInit() {
