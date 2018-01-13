@@ -10,7 +10,6 @@ export class ButtonComponent implements OnInit {
   width: number = 200;
   height: number = 100;
   degree: number = 2;
-  secounds: number = 3;
   hover: boolean = false;
 
   constructor() { }
