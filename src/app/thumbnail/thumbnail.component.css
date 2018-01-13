@@ -1,10 +1,10 @@
 .rect--thumbnail {
     width: fit-content;
     margin: 10px;
+    display: block;
 }
 
 .rect--inner-thumbnail {
     width: auto;
     height: auto;
-    margin: 0px;
 }
