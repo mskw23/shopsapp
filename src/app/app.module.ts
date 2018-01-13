@@ -10,6 +10,11 @@ import { ShopComponent } from './shops/shop/shop.component';
 import { ButtonComponent } from './button/button.component';
 import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 import { LoginRegisterComponent } from './login-register/login-register.component';
+import { StoreComponent } from './store/store.component';
+import { DetailsComponent } from './store/details/details.component';
+import { ProductsComponent } from './store/products/products.component';
+import { ProductComponent } from './store/products/product/product.component';
+import { MapComponent } from './store/map/map.component';
 
 
 @NgModule({
@@ -21,7 +26,12 @@ import { LoginRegisterComponent } from './login-register/login-register.componen
     ShopComponent,
     ButtonComponent,
     ThumbnailComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    StoreComponent,
+    DetailsComponent,
+    ProductsComponent,
+    ProductComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule
