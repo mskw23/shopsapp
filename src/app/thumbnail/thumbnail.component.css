@@ -1,6 +1,7 @@
 .rect--thumbnail {
     width: fit-content;
-    margin: 10px;
+    /* margin: 10px; */
+    margin-left: 30px;
     display: block;
 }
 

@@ -13,9 +13,7 @@
 }
 
 .account {
-    position: relative;
-    width: 400px;
-    height: 70px;
+    float: right;
     margin-right: 20px;
 }
 

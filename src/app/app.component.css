@@ -1,3 +1,9 @@
 a {
     text-decoration: none;
 }
+
+.fixed--button {
+    position: fixed;
+    bottom: 0px;
+    right: 50px; 
+}
