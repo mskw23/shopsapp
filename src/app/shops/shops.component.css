@@ -1,0 +1,54 @@
+.container {
+    background-color: #353535;
+    box-shadow: 5px 5px 5px grey;
+    margin-top: 100px;
+}
+
+.prev--btn {
+    position: relative;
+    width: 200px;
+    height: 75px;
+}
+
+.prev--btn:hover .rect--grey {
+    transition: all 0.3s ease;
+    transform: rotate(2.5deg);
+}
+
+.prev--btn:hover .rect--color {
+    transition: all 0.3s ease;
+    transform: rotate(-2.5deg)
+}
+
+.next--btn {
+    position: relative;
+    width: 200px;
+    height: 75;
+}
+
+.rect--next--prev {
+    position: relative;
+    width: 200px;
+    height: 75px;
+}
+
+p {
+    transition: all 0.3s ease;
+    color: #EAEB41;
+    -webkit-text-stroke: 3px black;
+    padding: 0px 10px 0px 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#button--prev {
+    padding: 10px;
+    float: left;
+
+}
+
+#button--next {
+    padding: 10px;
+    float: right;
+}

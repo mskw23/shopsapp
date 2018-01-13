@@ -1,0 +1,5 @@
+<div class="rect--gray rect--button" [ngStyle]="{'transform': 'rotate('+getOuterDegree()+')'}">
+    <div (mouseenter)="onHover()" (mouseleave)="onLeave()" class="rect--color rect--button" [ngStyle]="{'transform': 'rotate('+getInnerDegree()+')'}"> 
+        <p [ngStyle]="{'transform': 'rotate('+getOuterDegree()+')'}"><ng-content></ng-content></p>
+    </div>
+</div>

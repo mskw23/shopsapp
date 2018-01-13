@@ -1,0 +1,6 @@
+<div class="rect--gray rect--thumbnail">
+    <img [src]=getImgSrc() alt="">
+    <div class="rect--color rect--inner--thumbnail"[ngStyle]="{'transform': 'rotate('+getInnerDegree()+')'}">
+        <ng-content [ngStyle]="{'transform': 'rotate('+'-'+getInnerDegree()+')'}"></ng-content>
+    </div>
+</div>
