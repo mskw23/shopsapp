@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ShopComponent } from './shops/shop/shop.component';
 import { ButtonComponent } from './button/button.component';
 import { ThumbnailComponent } from './thumbnail/thumbnail.component';
+import { LoginRegisterComponent } from './login-register/login-register.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ThumbnailComponent } from './thumbnail/thumbnail.component';
     FooterComponent,
     ShopComponent,
     ButtonComponent,
-    ThumbnailComponent
+    ThumbnailComponent,
+    LoginRegisterComponent
   ],
   imports: [
     BrowserModule
