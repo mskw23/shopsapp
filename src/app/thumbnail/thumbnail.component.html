@@ -1,4 +1,4 @@
-<div class="rect--gray rect--thumbnail" [ngStyle]="{'width':getWidth()}" style="margin: 0 auto;">
+<div class="rect--gray rect--thumbnail" [ngStyle]="{'width':getWidth()}" style="margin: 0 auto; margin-top: 10px;">
     <img [src]=getImgSrc() alt="" style="width: 100%">
     <div class="rect--color rect--inner--thumbnail"[ngStyle]="{'transform': 'rotate('+getInnerDegree()+')'}">
         <ng-content [ngStyle]="{'transform': 'rotate('+'-'+getInnerDegree()+')'}"></ng-content>
