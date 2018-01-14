@@ -53,8 +53,4 @@ export class ButtonComponent implements OnInit {
     return this.degree;
   }
 
-  getSecounds() {
-    return this.secounds;
-  }
-
 }
