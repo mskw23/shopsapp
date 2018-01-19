@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  
+  isOn: boolean = false;
   
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggle() {
+    this.isOn = ! this.isOn;
   }
 
 }

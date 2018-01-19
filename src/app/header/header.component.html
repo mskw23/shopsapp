@@ -4,8 +4,15 @@
 
     <input type="text" class="nav--input" placeholder="Store...">
     
-
-    <app-button>ACCOUNT</app-button>
+    <div style="margin-top: 100px;">
+      <app-button (click)="toggle()">ACCOUNT</app-button>
+      <div class="menu" id="menu" *ngIf="isOn">
+          <ul>
+            <a href=""><li>LOGIN</li></a>
+            <a href=""><li>REGISTER</li></a>
+          </ul>
+      </div>
+    </div>
     
     
     

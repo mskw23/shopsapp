@@ -17,6 +17,10 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick() {
+    console.log("elo");
+  }
+
   onHover() {
     this.hover = true
   }

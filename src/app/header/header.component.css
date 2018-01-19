@@ -44,3 +44,27 @@
     color: #FFFFFF;
     outline: none;
 }
+
+.menu {
+    width: 222px;
+    height: fit-content;
+    background-color: white;
+    padding-top: 20px;
+    margin-top: -10px;
+}
+
+li {
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 2px black;
+    padding: 0px 0px 0px 0px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.isOn {
+    display: block;
+}
+
+.isDisabled {
+    display: none;
+}
