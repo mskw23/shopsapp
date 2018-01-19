@@ -1,6 +1,6 @@
 .nav {
     display: flex;
-    align-items: center; 
+    /* align-items: center;  */
     height: 100px;
     background-color: #353535;
     position: fixed;
@@ -17,7 +17,7 @@
 
 .account {
     float: right;
-    margin-right: 20px;
+    margin-right: 0px;
 }
 
 .rect--logo {

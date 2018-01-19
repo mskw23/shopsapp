@@ -12,7 +12,6 @@ p {
     width: fit-content;
     height: fit-content;
     position: relative;
-    margin-right: 10px;
 }
 
 .rect--button:hover {
