@@ -16,6 +16,8 @@ import { DetailsComponent } from './store/details/details.component';
 import { ProductsComponent } from './store/products/products.component';
 import { ProductComponent } from './store/products/product/product.component';
 import { MapComponent } from './store/map/map.component';
+import { DataService } from './data.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -38,9 +40,12 @@ import { MapComponent } from './store/map/map.component';
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDpZ6vlTWO0gN6mHfufk0kYMwKQk_z8d1Q'
-    })
+    }),
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

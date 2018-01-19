@@ -9,7 +9,9 @@ import { Input } from '@angular/core';
 export class ShopComponent implements OnInit {
 
   @Input()
-  imgSrc: string
+  imgSrc: string;
+  @Input()
+  url: string;
 
   getImgSrc() {
     return this.imgSrc;

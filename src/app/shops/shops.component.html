@@ -1,19 +1,19 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
-        <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
-        <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
+        <div *ngFor="let shop of results" class="col-md-4">
+            <app-shop [url]="shop.url" [imgSrc]="'http://localhost:8000'+shop.image">{{shop.title}}</app-shop>
+        </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="this.count > 3">
         <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
         <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
         <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
     </div>
 
-    <a href="#">
+    <a href="#" *ngIf="previous">
         <app-button id="button--prev">PREV</app-button>
     </a>
-    <a href="#">
+    <a href="#" *ngIf="next">
         <app-button id="button--next">NEXT</app-button>
     </a>
     
