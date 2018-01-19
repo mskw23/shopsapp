@@ -1,9 +1,11 @@
-<div class="shop-div">
-    <p class="shop-thumbnail">{{title}}</p>
+<div class="detail">
+    <div class="shop-div rect--color">
+        <p class="shop-thumbnail">{{title}}</p>
+    </div>
+    
+    <app-thumbnail [width]="'50%'" [imgSrc]="'http://localhost:8000'+imgUrl">
+      <p style="padding:10px; text-align: justify; transform: rotate(-1deg);">
+        <ng-content></ng-content>
+      </p>
+    </app-thumbnail>
 </div>
-
-<app-thumbnail [width]="'50%'" [imgSrc]="'http://localhost:8000'+imgUrl">
-  <p style="padding:10px; text-align: justify; transform: rotate(-1deg);">
-    <ng-content></ng-content>
-  </p>
-</app-thumbnail>

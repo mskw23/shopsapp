@@ -1,11 +1,20 @@
 p.shop-thumbnail {
-    margin-left: 250px;
-    margin-top: 10px;
-    display: block;
-    
+    color: #EAEB41;
+    -webkit-text-stroke: 3px black;
+    padding: 0px 10px 0px 10px;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .shop-div {
+    left: 270px;
     margin: 0 auto; 
-    margin-top: 10px;
+    margin-top: 50px;
+    width: fit-content;
+    position: absolute;
+    transform: rotate(-30deg);
+}
+
+.detail {
+    margin-top: 150px;
 }

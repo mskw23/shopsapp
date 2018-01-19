@@ -12,4 +12,14 @@ p {
     width: fit-content;
     height: fit-content;
     position: relative;
+    margin-right: 10px;
+}
+
+.rect--button:hover {
+    cursor: pointer;
+}
+
+.menu {
+    width: 222px;
+    height: fit-content;
 }
