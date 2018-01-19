@@ -8,4 +8,8 @@ export class DataService {
     getStores() {
         return this.http.get('http://localhost:8000/api/shops/');
     }
+
+    getStore(slug: string) {
+        return this.http.get('http://localhost:8000/api/shops/' + slug);
+    }
 }
