@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from  '@agm/core'
-
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,6 +19,11 @@ import { MapComponent } from './store/map/map.component';
 import { DataService } from './data.service';
 import { HttpModule } from '@angular/http';
 
+const appRoutes: Routes = [
+  { path: '', component: ShopsComponent },
+  { path: 'stores', component: ShopsComponent }
+  { path: 'stores/:id', component: StoreComponent }
+];
 
 @NgModule({
   declarations: [
@@ -41,7 +46,8 @@ import { HttpModule } from '@angular/http';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDpZ6vlTWO0gN6mHfufk0kYMwKQk_z8d1Q'
     }),
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     DataService

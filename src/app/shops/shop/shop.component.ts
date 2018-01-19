@@ -12,6 +12,8 @@ export class ShopComponent implements OnInit {
   imgSrc: string;
   @Input()
   url: string;
+  @Input()
+  slug: string;
 
   getImgSrc() {
     return this.imgSrc;

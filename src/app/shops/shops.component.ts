@@ -14,6 +14,7 @@ export class ShopsComponent implements OnInit {
   count: number = 0;
   next: string;
   previous: string;
+  slug: string;
   results: [{}];
 
   constructor(private dataService: DataService) { 
@@ -25,6 +26,7 @@ export class ShopsComponent implements OnInit {
         this.next = data['next'];
         this.previous = data['previous'];
         this.results = data['results'];
+        this.slug = data['slug'];
       },
       (error) => console.log(error)
     );
