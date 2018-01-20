@@ -7,9 +7,12 @@
     <div style="margin-right: 20px; margin-top: 15px;">
       <app-button (click)="toggle()">ACCOUNT</app-button>
       <div class="menu" id="menu" *ngIf="isOn">
-          <ul>
+          <ul *ngIf="!isAuthenticated">
             <a [routerLink]="'login'" (click)="toggle()"><li>LOGIN</li></a>
             <a [routerLink]="'register'" (click)="toggle()"><li>REGISTER</li></a>
+          </ul>
+          <ul *ngIf="isAuthenticated">
+            <li style="cursor: pointer; text-decoration:underline;" (click)="logout()">LOGOUT</li>
           </ul>
       </div>
     </div>

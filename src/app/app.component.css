@@ -14,3 +14,7 @@ a {
     width: 100%;
     top: 0px;
 }
+
+.footer {
+    bottom: 0px;
+}

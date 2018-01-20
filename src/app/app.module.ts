@@ -20,13 +20,22 @@ import { MapComponent } from './store/map/map.component';
 import { DataService } from './data.service';
 import { AuthService } from './auth.service';
 import { HttpModule } from '@angular/http';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { Http, RequestOptions } from '@angular/http';
+import { OrderButtonComponent } from './store/order-button/order-button.component';
+import { OwnerButtonComponent } from './store/owner-button/owner-button.component';
 
 const appRoutes: Routes = [
   { path: '', component: ShopsComponent },
-  { path: 'shop/:slug', component: StoreComponent },
+  { path: 'shop/:slug', component: StoreComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginRegisterComponent },
   { path: 'register', component: LoginRegisterComponent }
 ];
+
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig(), http, options);
+}
 
 @NgModule({
   declarations: [
@@ -42,7 +51,9 @@ const appRoutes: Routes = [
     DetailsComponent,
     ProductsComponent,
     ProductComponent,
-    MapComponent
+    MapComponent,
+    OrderButtonComponent,
+    OwnerButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +66,13 @@ const appRoutes: Routes = [
   ],
   providers: [
     DataService,
-    AuthService
+    AuthService,
+    AuthGuardService,
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    }
   ],
   bootstrap: [AppComponent]
 })

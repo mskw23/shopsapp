@@ -1,0 +1,11 @@
+.order-fixed {
+    position: fixed;
+    bottom: 0px;
+    right: 200px; 
+}
+
+.owner-fixed {
+    position: fixed;
+    bottom: 0px;
+    right: 50px; 
+}
