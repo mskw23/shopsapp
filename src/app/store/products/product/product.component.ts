@@ -8,12 +8,45 @@ import { Input } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  @Input()
+  description: string;
 
   @Input()
-  imgSrc: string
+  price: number;
+
+  @Input()
+  quantity: number;
+
+  @Input()
+  imgSrc: string;
+
+  value: number = 1;
 
   getImgSrc() {
     return this.imgSrc;
+  }
+
+  getValue() {
+    return this.value;
+  }
+
+  getPrice() {
+    return this.value * this.price
+  }
+
+  addProduct() {
+    if(this.value < this.quantity) {
+      this.value ++;
+    }
+  }
+
+
+
+  deleteProduct() {
+    if(this.value > 0) {
+      this.value --;
+    }
+    
   }
 
   constructor() { }

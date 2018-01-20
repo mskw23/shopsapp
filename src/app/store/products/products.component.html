@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-      <div class="col-md-4"><app-product [imgSrc]="'./assets/store-img.png'">FishBox</app-product></div>
-      <div class="col-md-4"><app-product [imgSrc]="'./assets/store-img.png'">FishBox</app-product></div>
-      <div class="col-md-4"><app-product [imgSrc]="'./assets/store-img.png'">FishBox</app-product></div>
+    <div class="col-md-4" *ngFor="let product of products">
+        <app-product [imgSrc]="'http://localhost:8000'+product.image" [description]="product.description" [quantity]="product.quantity" [price]="product.price">{{product.title}}</app-product>
+    </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="getCount() > 3">
       <div class="col-md-4"><app-product [imgSrc]="'./assets/store-img.png'">FishBox</app-product></div>
       <div class="col-md-4"><app-product [imgSrc]="'./assets/store-img.png'">FishBox</app-product></div>
       <div class="col-md-4"><app-product [imgSrc]="'./assets/store-img.png'">FishBox</app-product></div>

@@ -1,14 +1,14 @@
 <app-thumbnail [imgSrc]=getImgSrc()>
     <div style="transform:rotate(-1deg);"> 
         <p class="title"><ng-content></ng-content></p>
-        <p class="description">orem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        <p class="description">
+            {{this.description}}
         </p>
         <div style="padding: 10px;">
-            <button class="product--button">+</button>
-            <p style="display: inline;">1</p>
-            <button class="product--button">-</button>
+            <button class="product--button" (click)="addProduct()">+</button>
+            <p style="display: inline;">{{getValue()}}</p>
+            <button class="product--button" (click)="deleteProduct()">-</button>
+            <p style="display: inline;">{{getPrice()}}</p>
             <a href="">
                 <img src="./assets/k14.svg" alt="">
             </a>   
