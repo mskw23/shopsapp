@@ -14,6 +14,9 @@ export class DetailsComponent implements OnInit {
   @Input()
   title: string;
 
+  @Input()
+  author: string;
+
   constructor() { }
 
   ngOnInit() {

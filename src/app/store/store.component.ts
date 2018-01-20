@@ -27,7 +27,7 @@ export class StoreComponent implements OnInit {
         this.title = data['title'];
         this.products = data['products'];
         this.comments = data['comments'];
-        this.author = data['autor'];
+        this.author = data['user'];
         this.imageUrl = data['image'];
         console.log(data['image']);
       },

@@ -18,3 +18,20 @@ p.shop-thumbnail {
 .detail {
     margin-top: 150px;
 }
+
+p.author-thumbnail {
+    color: #EAEB41;
+    -webkit-text-stroke: 3px black;
+    padding: 0px 10px 0px 10px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.author-div {
+    left: 800px;
+    margin: 0 auto; 
+    margin-top: 30px;
+    width: fit-content;
+    position: absolute;
+    transform: rotate(20deg);
+}
