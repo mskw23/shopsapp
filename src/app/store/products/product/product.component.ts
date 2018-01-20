@@ -49,6 +49,10 @@ export class ProductComponent implements OnInit {
     
   }
 
+  onButtonClick() {
+    console.log("click");
+  }
+
   constructor() { }
 
   ngOnInit() {

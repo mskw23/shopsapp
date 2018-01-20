@@ -18,6 +18,6 @@ p.description {
     color: black;
 }
 
-.product--button {
-    
+.product--button:hover {
+    cursor: pointer;
 }
