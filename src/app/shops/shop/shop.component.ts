@@ -19,6 +19,10 @@ export class ShopComponent implements OnInit {
     return this.imgSrc;
   }
 
+  getUrl() {
+    return "shop/" + this.slug;
+  }
+
   constructor() { }
 
   ngOnInit() {

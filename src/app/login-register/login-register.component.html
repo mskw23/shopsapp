@@ -1,15 +1,24 @@
 <div class="container rect--gray">
   <img src="./assets/Logo-final.png" alt="" style="float: left; margin-left: 20px; width:158px; margin-top: 20px;">
-  <div class="rect--color rect--login">
-    <div class="rect--login--inner">
-      <a href="" class="login--button" style="text-decoration: none;">
-        <div class="rect--selected">
-            <p>LOGIN</p>
-        </div>
-      </a>
+  <div class="rect--color rect--login" [ngStyle]="{'transform': 'rotate('+getDegree()+'deg)'}">
+    <div class="rect--login--inner" [ngStyle]="{'transform': 'rotate('+getDegree2()+'deg)'}">
       
-      <a href="" class="register--button" style="text-decoration: none;"><p>REGISTER</p></a>
-      <div class="login--container">
+      <div class="rect--selected login--button" *ngIf="isLogin" (click)="setLogin(true)">
+          <p>LOGIN</p>
+      </div>
+      <div class="login--button" *ngIf="!isLogin" (click)="setLogin(true)">
+          <p>LOGIN</p>
+      </div>
+
+    
+      <div class="register--button" *ngIf="isLogin" (click)="setLogin(false)">
+          <p>REGISTER</p>
+      </div>
+      <div class="rect--selected register--button" *ngIf="!isLogin" (click)="setLogin(false)">
+          <p>REGISTER</p>
+      </div>
+
+      <div class="login--container" *ngIf="isLogin">
         <input type="text" class="email--input" placeholder="email">
         <input type="password" class="password--input" placeholder="password">
         <div style="margin: 0 auto; width:fit-content">
@@ -19,12 +28,13 @@
         </div>
         
       </div>
-      <div class="register--container" hidden>
+      <div class="register--container" *ngIf="!isLogin">
+          <input type="text" class="email--input" placeholder="username">
           <input type="text" class="email--input" placeholder="email">
           <input type="password" class="password--input" placeholder="password">
           <div style="margin: 0 auto; width:fit-content">
               <a href="" style="text-decoration: none; ">
-                <p>LOGIN ➜</p>
+                <p>REGISTER ➜</p>
               </a>
           </div>
       </div>

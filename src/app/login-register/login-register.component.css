@@ -1,7 +1,7 @@
 .container {
     background-color: #353535;
     box-shadow: 5px 5px 5px grey;
-    margin-top: 100px;
+    margin-top: 200px;
     padding-right: 0px;
     margin-bottom: 100px;
 }
@@ -10,21 +10,20 @@
     float: right;
     width: 80%;
     height: 100%;
-    transform: rotate(1deg);
-}
-
-.rect--login--inner {
-    transform: rotate(-1deg);
 }
 
 .login--button {
     float:left;
     margin-left: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .register--button {
     float:right;
     margin-right: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 p {
