@@ -19,24 +19,31 @@
       </div>
 
       <div class="login--container" *ngIf="isLogin">
-        <input type="text" class="email--input" placeholder="email">
-        <input type="password" class="password--input" placeholder="password">
-        <div style="margin: 0 auto; width:fit-content">
-            <a href="" style="text-decoration: none; ">
-              <p>LOGIN ➜</p>
-            </a>
-        </div>
-        
-      </div>
-      <div class="register--container" *ngIf="!isLogin">
-          <input type="text" class="email--input" placeholder="username">
-          <input type="text" class="email--input" placeholder="email">
-          <input type="password" class="password--input" placeholder="password">
+        <form (ngSubmit)="onLogin(f)" #f="ngForm">
+          <input type="text" class="email--input" placeholder="email" id="email" name="email" ngModel>
+          <input type="password" class="password--input" placeholder="password" id="password" name="password" ngModel>
           <div style="margin: 0 auto; width:fit-content">
-              <a href="" style="text-decoration: none; ">
-                <p>REGISTER ➜</p>
-              </a>
+            <button type="submit">LOGIN ➜</button>
+              <!-- <a href="" style="text-decoration: none; ">
+                <p>LOGIN ➜</p>
+              </a> -->
           </div>
+        </form>
+      </div>
+      
+      <div class="register--container" *ngIf="!isLogin">
+        <form (ngSubmit)="onRegister(f)" #f="ngForm">
+          <input type="text" class="email--input" placeholder="username" id="username" name="username" ngModel>
+          <input type="text" class="email--input" placeholder="email" id="email" name="email" ngModel> 
+          <input type="password" class="password--input" placeholder="password" id="password" name="password" ngModel>
+          <div style="margin: 0 auto; width:fit-content">
+              <button type="submit">REGISTER ➜</button>
+              <!-- <a href="" style="text-decoration: none; ">
+                <p>REGISTER ➜</p>
+              </a> -->
+          </div>
+        </form>
+          
       </div>
     </div>
     

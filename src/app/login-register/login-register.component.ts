@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
+import { NgForm } from '@angular/forms'
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login-register',
@@ -12,7 +14,7 @@ export class LoginRegisterComponent implements OnInit {
   degg: string = this.isLogin ? "1" : "-1";
   degg2: string = this.isLogin ? "-1" : "1";
 
-  constructor(private router: Router, private route: ActivatedRoute) { 
+  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthService) { 
     console.log(router.url);
     if(router.url == '/login') {
       this.isLogin = true 
@@ -21,6 +23,20 @@ export class LoginRegisterComponent implements OnInit {
     }
     this.degg = this.isLogin ? "1" : "-1";
     this.degg2 = this.isLogin ? "-1" : "1";
+  }
+
+  onRegister(form: NgForm) {
+    const username = form.value.username;
+    const email = form.value.email;
+    const password = form.value.password;
+    this.authService.register(username, email, password);
+  }
+
+
+  onLogin(form: NgForm) {
+    const email = form.value.email;
+    const password = form.value.password;
+    this.authService.login(email, password);
   }
 
   setLogin(choice: boolean) {
