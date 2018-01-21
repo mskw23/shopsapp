@@ -1,5 +1,11 @@
 <app-details [author]="author" [title]="title" [imgUrl]="imageUrl" style="margin-left: 100px; margin-top:150px;">{{description}}</app-details>
-<app-products [products]="products" ></app-products>
+<app-products [products]="products" (onOrderClicked)="getOrder($event)"></app-products>
 <app-map></app-map>
-<app-order-button class="order-fixed"></app-order-button>
-<app-owner-button class="owner-fixed"></app-owner-button>
+<app-order-button class="order-fixed" *ngIf="isAuthenticated" (click)="showOrders()"></app-order-button>
+<div class="order-fixed order" *ngIf="isOrderOn">
+    <ul>
+        <li *ngFor="let order of orders">{{order.name}}: {{order.price}}</li>
+        <li><button>BUY</button></li>
+    </ul>
+</div>
+<app-owner-button class="owner-fixed" *ngIf="isOwner"></app-owner-button>

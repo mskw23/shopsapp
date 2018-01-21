@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let product of products">
-        <app-product [imgSrc]="'http://localhost:8000'+product.image" [description]="product.description" [quantity]="product.quantity" [price]="product.price">{{product.title}}</app-product>
+        <app-product (onOrderClicked)="getOrder($event)" [imgSrc]="product.image" [description]="product.description" [quantity]="product.quantity" [price]="product.price" [title]="product.title"></app-product>
     </div>
   </div>
   <div class="row" *ngIf="getCount() > 3">

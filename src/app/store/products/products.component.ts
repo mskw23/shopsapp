@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-products',
@@ -8,12 +8,18 @@ import { Input } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
+  @Output() onOrderClicked: EventEmitter<any> = new EventEmitter<any>();
+
   @Input() 
   products: [{}]
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getOrder(order) {
+    this.onOrderClicked.emit(order);
   }
 
   getCount() {

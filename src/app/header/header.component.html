@@ -12,6 +12,7 @@
             <a [routerLink]="'register'" (click)="toggle()"><li>REGISTER</li></a>
           </ul>
           <ul *ngIf="isAuthenticated">
+            <a [routerLink]="'shop'" (click)="toggle()"><li>NEW SHOP</li></a>
             <li style="cursor: pointer; text-decoration:underline;" (click)="logout()">LOGOUT</li>
           </ul>
       </div>

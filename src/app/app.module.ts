@@ -28,7 +28,8 @@ import { OwnerButtonComponent } from './store/owner-button/owner-button.componen
 
 const appRoutes: Routes = [
   { path: '', component: ShopsComponent },
-  { path: 'shop/:slug', component: StoreComponent, canActivate: [AuthGuardService] },
+  { path: 'shop/:slug', component: StoreComponent },
+  { path: 'shop', component: StoreComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginRegisterComponent },
   { path: 'register', component: LoginRegisterComponent }
 ];

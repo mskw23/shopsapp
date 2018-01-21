@@ -1,7 +1,15 @@
 .order-fixed {
     position: fixed;
     bottom: 0px;
-    right: 200px; 
+    right: 250px; 
+}
+
+.order {
+    background-color: white;
+    bottom: 60px;
+    right: 250px;
+    width: 190px;
+    height: fit-content;
 }
 
 .owner-fixed {

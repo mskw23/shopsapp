@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -7,6 +7,11 @@ import { Input } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+
+  @Output() onOrderClicked: EventEmitter<any> = new EventEmitter<any>();
+
+  @Input()
+  title: string;
 
   @Input()
   description: string;
@@ -38,6 +43,10 @@ export class ProductComponent implements OnInit {
     if(this.value < this.quantity) {
       this.value ++;
     }
+  }
+
+  setOrder() {
+    this.onOrderClicked.emit({name: this.title, price: this.getPrice()});
   }
 
 
