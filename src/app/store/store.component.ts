@@ -24,30 +24,35 @@ export class StoreComponent implements OnInit {
   isOrderOn: boolean = false;
   isOwnerOn: boolean = false;
   isAuthenticated: boolean;
+  isOrder: boolean = false;
   isOwner: boolean;
 
   constructor(private router: Router, private dataService: DataService, private route: ActivatedRoute, private authService: AuthService) {
     this.isAuthenticated = authService.isAuthenticated();
     if(router.url == '/shop') {
       this.isOwner = true;
+      this.isOrder = false;
       this.author = authService.decodeCurrentUser()['username']
       this.imageUrl = '../../assets/store-img.png'
       this.title = "SUPER SHOP"
       this.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       this.products = [
         {
+          title: "Fish",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
           price: 10,
           quantity: 10,
           image: '../../../assets/store-img.png'
         },
         {
+          title: "Fish",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
           price: 10,
           quantity: 10,
           image: '../../../assets/store-img.png'
         },
         {
+          title: "Fish",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
           price: 10,
           quantity: 10,
@@ -74,6 +79,11 @@ export class StoreComponent implements OnInit {
           } else {
             this.isOwner = false;
           }
+          if (this.isAuthenticated) {
+            this.isOrder = true;
+          } else {
+            this.isOrder = false;
+          }
         },
         (error) => console.log(error)
       );
@@ -85,9 +95,52 @@ export class StoreComponent implements OnInit {
     this.isOrderOn = !this.isOrderOn;
   }
 
+  showOwner() {
+    this.isOwnerOn = !this.isOwnerOn;
+  }
+
   getOrder(order) {
     console.log(order);
     this.orders.push(order);
+  }
+
+  deleteProduct(i: number) {
+    console.log(i);
+    this.products.splice(i, 1);
+  }
+
+  readDetailsUrl(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = (event:any) => {
+        this.imageUrl = event.target.result;
+      }
+  
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+  readProductUrl(event:any, i:number) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = (event:any) => {
+        this.products[i]['image'] = event.target.result;
+      }
+  
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+  addNewProduct() {
+    this.products.push({
+      title: "Fish",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      price: 10,
+      quantity: 10,
+      image: '../../../assets/store-img.png'
+    })
   }
 
   ngOnInit() {

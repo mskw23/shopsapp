@@ -1,11 +1,30 @@
 <app-details [author]="author" [title]="title" [imgUrl]="imageUrl" style="margin-left: 100px; margin-top:150px;">{{description}}</app-details>
 <app-products [products]="products" (onOrderClicked)="getOrder($event)"></app-products>
 <app-map></app-map>
-<app-order-button class="order-fixed" *ngIf="isAuthenticated" (click)="showOrders()"></app-order-button>
+<app-order-button class="order-fixed" *ngIf="isOrder" (click)="showOrders()"></app-order-button>
 <div class="order-fixed order" *ngIf="isOrderOn">
     <ul>
         <li *ngFor="let order of orders">{{order.name}}: {{order.price}}</li>
         <li><button>BUY</button></li>
     </ul>
 </div>
-<app-owner-button class="owner-fixed" *ngIf="isOwner"></app-owner-button>
+<app-owner-button class="owner-fixed" *ngIf="isOwner" (click)="showOwner()" style="width:175px;"></app-owner-button>
+<div class="owner-fixed owner" *ngIf="isOwnerOn">
+    <p>Title</p>
+    <input [(ngModel)]="title">
+    <p>Description</p>
+    <textarea name="" id="" cols="30" rows="10" [(ngModel)]="description" style="width:175px;"></textarea>
+    <p>Image</p>
+    <input type="file" (change)="readDetailsUrl($event)">
+    <div *ngFor="let product of products let i = index" style="background-color:bisque; margin-bottom: 10px; border:solid;">
+        <p>Title</p>
+        <input [(ngModel)]="product.title">
+        <p>Description</p>
+        <textarea name="" id="" cols="30" rows="10" [(ngModel)]="product.description" style="width:170px;"></textarea>
+        <p>Image</p>
+        <input type="file" (change)="readProductUrl($event, i)">
+        <button (click)="deleteProduct(i)">DELETE</button>
+    </div>
+    <button (click)="addNewProduct()">ADD NEW PRODUCT</button>
+    <button (click)="submitNewShop()">SUBMIT</button>
+</div>

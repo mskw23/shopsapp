@@ -13,9 +13,11 @@ export class ProductsComponent implements OnInit {
   @Input() 
   products: [{}]
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
+    console.log(this.products);
   }
 
   getOrder(order) {

@@ -17,3 +17,12 @@
     bottom: 0px;
     right: 50px; 
 }
+
+.owner {
+    background-color: white;
+    bottom: 60px;
+    right: 50px;
+    width: 175px;
+    height: 500px;
+    overflow:scroll
+}
