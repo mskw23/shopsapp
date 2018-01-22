@@ -30,5 +30,20 @@ export class DataService {
             )
     }
 
+    addShop( form: {} ) {
+        let headers = new Headers();
+        headers.append('Authorization', 'JWT ' + localStorage.getItem('token'));
+        headers.delete('Content-Type');
+        let opts = new RequestOptions();
+        opts.headers = headers;
+        this.http.post('http://localhost:8000/api/shops/create/', 
+        form, opts)
+            .subscribe(
+                (response: Response) => {
+                    console.log(response);
+                }
+            )
+    }
+
     
 }

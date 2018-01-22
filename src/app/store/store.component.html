@@ -19,6 +19,10 @@
     <div *ngFor="let product of products let i = index" style="background-color:bisque; margin-bottom: 10px; border:solid;">
         <p>Title</p>
         <input [(ngModel)]="product.title">
+        <p>Price</p>
+        <input [(ngModel)]="product.price" type="number">
+        <p>Quantity</p>
+        <input [(ngModel)]="product.quantity" type="number">
         <p>Description</p>
         <textarea name="" id="" cols="30" rows="10" [(ngModel)]="product.description" style="width:170px;"></textarea>
         <p>Image</p>

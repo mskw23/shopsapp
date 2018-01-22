@@ -12,6 +12,10 @@ import { AuthService } from '../auth.service';
 })
 export class StoreComponent implements OnInit {
 
+  detailFile: File;
+  productFiles: [{}] = [{}];
+
+
   title: string;
   imageUrl: string;
   description: string;
@@ -111,6 +115,7 @@ export class StoreComponent implements OnInit {
 
   readDetailsUrl(event:any) {
     if (event.target.files && event.target.files[0]) {
+      this.detailFile = event.target.files[0];
       var reader = new FileReader();
   
       reader.onload = (event:any) => {
@@ -123,6 +128,7 @@ export class StoreComponent implements OnInit {
 
   readProductUrl(event:any, i:number) {
     if (event.target.files && event.target.files[0]) {
+      this.productFiles.push({file: event.target.files[0], i: i});
       var reader = new FileReader();
   
       reader.onload = (event:any) => {
@@ -141,6 +147,25 @@ export class StoreComponent implements OnInit {
       quantity: 10,
       image: '../../../assets/store-img.png'
     })
+  }
+
+  submitNewShop() {
+    console.log(this.productFiles);
+    console.log(this.detailFile);
+    let productsData = []
+    this.products.forEach((product) => {
+      productsData.push({
+
+      });
+    })
+
+    let data = {
+      title: this.title,
+      description: this.description,
+      image: this.detailFile
+    }
+    console.log(data);
+    this.dataService.addShop(data);
   }
 
   ngOnInit() {
