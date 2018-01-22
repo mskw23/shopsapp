@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
 export class StoreComponent implements OnInit {
 
   detailFile: File;
-  productFiles: [{}] = [{}];
+  productFiles: [File];
 
 
   title: string;
@@ -115,10 +115,10 @@ export class StoreComponent implements OnInit {
 
   readDetailsUrl(event:any) {
     if (event.target.files && event.target.files[0]) {
-      this.detailFile = event.target.files[0];
       var reader = new FileReader();
   
       reader.onload = (event:any) => {
+        this.detailFile = reader.result.split(',')[1];
         this.imageUrl = event.target.result;
       }
   
@@ -128,10 +128,10 @@ export class StoreComponent implements OnInit {
 
   readProductUrl(event:any, i:number) {
     if (event.target.files && event.target.files[0]) {
-      this.productFiles.push({file: event.target.files[0], i: i});
       var reader = new FileReader();
   
       reader.onload = (event:any) => {
+        this.productFiles.push(reader.result.split(',')[1]);
         this.products[i]['image'] = event.target.result;
       }
   
@@ -165,7 +165,11 @@ export class StoreComponent implements OnInit {
       image: this.detailFile
     }
     console.log(data);
-    this.dataService.addShop(data);
+    this.dataService.addShop(data).subscribe(
+        (response: Response) => {
+            this.router.navigate('/');
+        }
+    )
   }
 
   ngOnInit() {
