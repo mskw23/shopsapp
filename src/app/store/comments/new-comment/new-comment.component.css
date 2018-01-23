@@ -2,6 +2,7 @@
     width: 70%;
     margin-bottom: 100px;
     background-color: #353535;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .text-new-comment  {
@@ -12,4 +13,5 @@
 .title-new-comment {
     width: 100%;
     margin-bottom: 5px;
+    font-size: 30px;
 }

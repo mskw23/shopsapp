@@ -6,6 +6,16 @@
     margin-bottom: 10px;
 }
 
+.title-lbl {
+    width: fit-content;
+    color: #353535;
+    padding: 0px 10px 0px 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #EAEB41
+}
+
 .author-lbl {
     width: fit-content;
     transition: all 0.3s ease;
