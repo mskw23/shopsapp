@@ -8,8 +8,8 @@ import 'rxjs/Rx';
 export class DataService {
     constructor(private http: Http, private authService: AuthService) {}
 
-    getStores() {
-        return this.http.get('http://localhost:8000/api/shops/');
+    getStores(url: string) {
+        return this.http.get('http://localhost:8000/api/shops/'+url);
     }
 
     getStore(slug: string) {
@@ -49,13 +49,12 @@ export class DataService {
         headers.append('Content-Type', 'application/json');
         let opts = new RequestOptions();
         opts.headers = headers;
-        this.http.post('http://localhost:8000/api/products/create/', 
-        form, opts)
-            .subscribe(
+        return this.http.post('http://localhost:8000/api/products/create/', 
+        form, opts).subscribe(
                 (response: Response) => {
-                    console.log(response);
+                  console.log(response);
                 }
-            )
+            );
     }
 
     updateShop( form: {} ) {

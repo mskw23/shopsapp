@@ -4,17 +4,8 @@
             <app-shop [slug]="shop.slug" [url]="shop.url" [imgSrc]="'http://localhost:8000'+shop.image">{{shop.title}}</app-shop>
         </div>
     </div>
-    <div class="row" *ngIf="this.count > 3">
-        <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
-        <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
-        <div class="col-md-4"><app-shop [imgSrc]="'./assets/store-img.png'">FishBox</app-shop></div>
-    </div>
 
-    <a href="#" *ngIf="previous">
-        <app-button id="button--prev">PREV</app-button>
-    </a>
-    <a href="#" *ngIf="next">
-        <app-button id="button--next">NEXT</app-button>
-    </a>
+    <app-button *ngIf="previous" id="button--prev" (click)="onPrevClick()">PREV</app-button>
+    <app-button *ngIf="next" id="button--next" (click)="onNextClick()">NEXT</app-button>
     
 </div>

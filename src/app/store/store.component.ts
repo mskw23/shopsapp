@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
 export class StoreComponent implements OnInit {
 
   detailFile: File;
-  productFiles: [File];
+  productFiles: [string] = [''];
 
 
   title: string;
@@ -131,7 +131,15 @@ export class StoreComponent implements OnInit {
       var reader = new FileReader();
   
       reader.onload = (event:any) => {
-        this.productFiles.push(reader.result.split(',')[1]);
+
+        
+        if (this.productFiles[i] == undefined) {
+          this.productFiles.push(reader.result.split(',')[1]);
+        }
+        this.productFiles[i] = reader.result.split(',')[1];
+
+        console.log(this.productFiles);
+        
         this.products[i]['image'] = event.target.result;
       }
   
@@ -150,24 +158,46 @@ export class StoreComponent implements OnInit {
   }
 
   submitNewShop() {
-    console.log(this.productFiles);
-    console.log(this.detailFile);
-    let productsData = []
-    this.products.forEach((product) => {
-      productsData.push({
-
-      });
-    })
 
     let data = {
       title: this.title,
       description: this.description,
       image: this.detailFile
     }
-    console.log(data);
+
     this.dataService.addShop(data).subscribe(
         (response: Response) => {
-            this.router.navigate(['/']);
+            var slug = 'shop/'+response.json()['slug'];
+            var id = response.json()['id'];
+            console.log(response.json());
+            let productsData = []
+            this.products.forEach((product, index) => {
+              productsData.push({
+                title: product['title'],
+                description: product['description'],
+                price: product['price'],
+                quantity: product['quantity'],
+                shop: id,
+                image: this.productFiles[index]
+              })
+            })
+            var i = 0;
+            productsData.forEach((productData, index, array) => {
+              this.dataService.addProduct(productData);
+            });
+            //   .subscribe(
+            //     (response: Response) => {
+            //       i++;
+            //         if (i = array.length) {
+                      
+            //         }
+            //     }
+            // );
+            // });
+
+            this.router.navigate([slug]);
+            
+            
         }
     )
   }

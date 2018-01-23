@@ -17,8 +17,10 @@ export class ShopsComponent implements OnInit {
   slug: string;
   results: [{}];
 
+  pageNum = 0;
+
   constructor(private dataService: DataService) { 
-    this.dataService.getStores()
+    this.dataService.getStores('')
     .subscribe(
       (response: Response) => {
         const data = response.json()
@@ -38,6 +40,33 @@ export class ShopsComponent implements OnInit {
 
   getCount() {
     return this.count;
+  }
+
+  onNextClick() {
+    this.pageNum++;
+    this.setPage(this.pageNum)
+  }
+
+  onPrevClick() {
+    console.log(this.pageNum);
+    this.pageNum--;
+    this.setPage(this.pageNum)
+
+  }
+
+  setPage(num: number) {
+    this.dataService.getStores('?page='+this.pageNum)
+    .subscribe(
+      (response: Response) => {
+        const data = response.json()
+        this.count = data['count'];
+        this.next = data['next'];
+        this.previous = data['previous'];
+        this.results = data['results'];
+        this.slug = data['slug'];
+      },
+      (error) => console.log(error)
+    );
   }
 
   ngOnInit() {

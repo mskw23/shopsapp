@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -11,6 +11,8 @@ export class ButtonComponent implements OnInit {
   height: number = 100;
   degree: number = 2;
   hover: boolean = false;
+  @Input()
+  fontSize = "40px";
 
   constructor() { }
 
