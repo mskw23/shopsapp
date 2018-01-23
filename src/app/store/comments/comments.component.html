@@ -1,2 +1,2 @@
 <app-comment *ngFor="let comment of comments" [title]="comment.title" [message]="comment.message" [user]="comment.user"></app-comment>
-<app-new-comment [shop]="shopId" (onComentSent)="addToComments($event)"></app-new-comment>
+<app-new-comment *ngIf="isAuthenticated" [shop]="shopId" (onComentSent)="addToComments($event)"></app-new-comment>

@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input } from '@angular/core';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-comments',
@@ -13,7 +14,13 @@ export class CommentsComponent implements OnInit {
   @Input()
   comments: [{}];
 
-  constructor() { }
+  isAuthenticated = false;
+
+  constructor(private authService: AuthService) {
+    if (authService.isAuthenticated()) {
+      this.isAuthenticated = true;
+    }
+   }
 
   addToComments(comment) {
     this.comments.push(comment);
