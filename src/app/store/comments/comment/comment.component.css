@@ -1,0 +1,28 @@
+.comment-container {
+    background-color: blue;
+    width: 70%;
+    box-shadow: 5px 5px 5px grey;
+    background-color: #353535;
+    margin-bottom: 10px;
+}
+
+.author-lbl {
+    width: fit-content;
+    transition: all 0.3s ease;
+    color: #EAEB41;
+    -webkit-text-stroke: 3px black;
+    padding: 0px 10px 0px 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.content-container {
+    background-color: white;
+    padding: 10px;
+}
+
+.content-lbl {
+    font-size: 20px;
+}

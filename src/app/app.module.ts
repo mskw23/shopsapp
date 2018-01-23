@@ -25,6 +25,9 @@ import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { Http, RequestOptions } from '@angular/http';
 import { OrderButtonComponent } from './store/order-button/order-button.component';
 import { OwnerButtonComponent } from './store/owner-button/owner-button.component';
+import { CommentsComponent } from './store/comments/comments.component';
+import { CommentComponent } from './store/comments/comment/comment.component';
+import { NewCommentComponent } from './store/comments/new-comment/new-comment.component';
 
 const appRoutes: Routes = [
   { path: '', component: ShopsComponent },
@@ -54,7 +57,10 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     ProductComponent,
     MapComponent,
     OrderButtonComponent,
-    OwnerButtonComponent
+    OwnerButtonComponent,
+    CommentsComponent,
+    CommentComponent,
+    NewCommentComponent
   ],
   imports: [
     BrowserModule,
