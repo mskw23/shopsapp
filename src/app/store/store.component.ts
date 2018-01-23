@@ -4,6 +4,7 @@ import { Response } from '@angular/http'
 import 'rxjs/Rx';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-store',
@@ -158,6 +159,9 @@ export class StoreComponent implements OnInit {
     })
   }
 
+  public productsData = [];
+  public newSlug: string;
+
   submitNewShop() {
 
     let data = {
@@ -165,15 +169,15 @@ export class StoreComponent implements OnInit {
       description: this.description,
       image: this.detailFile
     }
-
     this.dataService.addShop(data).subscribe(
         (response: Response) => {
-            var slug = 'shop/'+response.json()['slug'];
+            this.newSlug = 'shop/'+response.json()['slug'];
             var id = response.json()['id'];
             console.log(response.json());
-            let productsData = []
+            //let productsData = []
+            
             this.products.forEach((product, index) => {
-              productsData.push({
+              this.productsData.push({
                 title: product['title'],
                 description: product['description'],
                 price: product['price'],
@@ -183,25 +187,32 @@ export class StoreComponent implements OnInit {
               })
             })
             var i = 0;
-            productsData.forEach((productData, index, array) => {
-              this.dataService.addProduct(productData);
-            });
-            //   .subscribe(
-            //     (response: Response) => {
-            //       i++;
-            //         if (i = array.length) {
-                      
-            //         }
-            //     }
-            // );
+            // productsData.forEach((productData, index, array) => {
+            this.submitNewProduct();
             // });
+            
 
-            this.router.navigate([slug]);
+            
+            
+
+            
             
             
         }
     )
   }
+
+  submitNewProduct(count = this.productsData.length - 1, i = 0) {
+    if (i > count) {
+      this.router.navigate([this.newSlug]);
+    }
+    this.dataService.addProduct(this.productsData[i])
+      .subscribe(
+          (response: Response) => {
+            this.submitNewProduct(count, ++i);
+          }
+      );
+  };
 
   ngOnInit() {
   }

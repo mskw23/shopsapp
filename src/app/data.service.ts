@@ -46,11 +46,7 @@ export class DataService {
         let opts = new RequestOptions();
         opts.headers = headers;
         return this.http.post('http://localhost:8000/api/products/create/', 
-        form, opts).subscribe(
-                (response: Response) => {
-                  console.log(response);
-                }
-            );
+        form, opts);
     }
 
     updateShop( form: {} ) {
