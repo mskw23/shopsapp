@@ -167,7 +167,7 @@ export class StoreComponent implements OnInit {
     console.log(data);
     this.dataService.addShop(data).subscribe(
         (response: Response) => {
-            this.router.navigate('/');
+            this.router.navigate(['/']);
         }
     )
   }
