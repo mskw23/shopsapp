@@ -1,6 +1,6 @@
 <app-details [author]="author" [title]="title" [imgUrl]="imageUrl" style="margin-left: 100px; margin-top:150px;">{{description}}</app-details>
 <app-products [products]="products" (onOrderClicked)="getOrder($event)"></app-products>
-<app-comments></app-comments>
+<app-comments [comments]="comments" ></app-comments>
 <app-map></app-map>
 <app-order-button class="order-fixed" *ngIf="isOrder" (click)="showOrders()"></app-order-button>
 <div class="order-fixed order" *ngIf="isOrderOn">

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../../data.service';
+import { Response } from '@angular/http'
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-new-comment',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCommentComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+
+  message: string;
+
+  shop: number
+
+  constructor(private dataService: DataService) { 
+    dataService.addComment(this.title, this.message, this.shop);
+  }
 
   ngOnInit() {
   }
