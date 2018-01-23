@@ -15,7 +15,7 @@ export class StoreComponent implements OnInit {
   detailFile: File;
   productFiles: [string] = [''];
 
-
+  id: number;
   title: string;
   imageUrl: string;
   description: string;
@@ -69,6 +69,7 @@ export class StoreComponent implements OnInit {
       .subscribe(
         (response: Response) => {
           const data = response.json();
+          this.id = data['id'];
           this.description = data['description'];
           this.title = data['title'];
           this.products = data['products'];

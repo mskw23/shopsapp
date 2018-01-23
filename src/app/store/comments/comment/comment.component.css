@@ -20,12 +20,11 @@
     width: fit-content;
     transition: all 0.3s ease;
     color: #EAEB41;
-    -webkit-text-stroke: 3px black;
     padding: 0px 10px 0px 10px;
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-
+    float: right;
 }
 
 .content-container {
@@ -33,6 +32,6 @@
     padding: 10px;
 }
 
-.content-lbl {
+.content-txt {
     font-size: 20px;
 }

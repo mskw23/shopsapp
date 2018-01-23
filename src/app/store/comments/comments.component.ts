@@ -8,9 +8,16 @@ import { Component, OnInit ,Input } from '@angular/core';
 export class CommentsComponent implements OnInit {
 
   @Input()
+  shopId: string;
+
+  @Input()
   comments: [{}];
 
   constructor() { }
+
+  addToComments(comment) {
+    this.comments.push(comment);
+  }
 
   ngOnInit() {
   }

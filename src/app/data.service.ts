@@ -21,13 +21,9 @@ export class DataService {
         headers.append('Authorization', 'JWT ' + localStorage.getItem('token'));
         let opts = new RequestOptions();
         opts.headers = headers;
-        this.http.post('http://localhost:8000/api/comments/create/', 
+        return this.http.post('http://localhost:8000/api/comments/create/', 
         {title: title, message: message, shop: shop}, opts)
-            .subscribe(
-                (response: Response) => {
-                    console.log(response);
-                }
-            )
+            
     }
 
     addShop( form: {} ) {
