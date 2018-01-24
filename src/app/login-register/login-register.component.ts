@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
 import { NgForm } from '@angular/forms'
 import { AuthService } from '../auth.service';
+import { Response } from '@angular/http'
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-login-register',
@@ -29,14 +31,31 @@ export class LoginRegisterComponent implements OnInit {
     const username = form.value.username;
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.register(username, email, password);
+    this.authService.register(username, email, password).subscribe(
+      (response: Response) => {
+        this.authService.login(email, password).subscribe(
+          (res: Response) => {
+            const token = res.json()['token'];
+            localStorage.setItem('token', token);
+            this.router.navigate(['/']);
+          }
+        );
+      }
+    );
+    
   }
 
 
   onLogin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.login(email, password);
+    this.authService.login(email, password).subscribe(
+      (res: Response) => {
+        const token = res.json()['token'];
+        localStorage.setItem('token', token);
+        this.router.navigate(['/']);
+      }
+    );
   }
 
   setLogin(choice: boolean) {

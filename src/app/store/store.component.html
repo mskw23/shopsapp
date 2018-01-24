@@ -5,8 +5,8 @@
 <app-order-button class="order-fixed" *ngIf="isOrder" (click)="showOrders()"></app-order-button>
 <div class="order-fixed order" *ngIf="isOrderOn">
     <ul>
-        <li *ngFor="let order of orders">{{order.name}}: {{order.price}}</li>
-        <li><button>BUY</button></li>
+        <p *ngFor="let order of orders">{{order.name}} {{order.price}}</p>
+        <button>BUY</button>
     </ul>
 </div>
 <app-owner-button class="owner-fixed" *ngIf="isOwner" (click)="showOwner()" style="width:175px;"></app-owner-button>

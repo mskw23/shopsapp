@@ -88,7 +88,7 @@
                                     <a href="../components/ButtonComponent.html" >ButtonComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/CommentComponent.html" >CommentComponent</a>
+                                    <a href="../components/CommentComponent.html"  data-type="entity-link" class="active" >CommentComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/CommentsComponent.html" >CommentsComponent</a>
@@ -115,7 +115,7 @@
                                     <a href="../components/OrderButtonComponent.html" >OrderButtonComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/OwnerButtonComponent.html"  data-type="entity-link" class="active" >OwnerButtonComponent</a>
+                                    <a href="../components/OwnerButtonComponent.html" >OwnerButtonComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ProductComponent.html" >ProductComponent</a>
@@ -295,7 +295,7 @@
                                            <a href="../components/ButtonComponent.html" >ButtonComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/CommentComponent.html" >CommentComponent</a>
+                                           <a href="../components/CommentComponent.html"  data-type="entity-link" class="active" >CommentComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/CommentsComponent.html" >CommentsComponent</a>
@@ -322,7 +322,7 @@
                                            <a href="../components/OrderButtonComponent.html" >OrderButtonComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/OwnerButtonComponent.html"  data-type="entity-link" class="active" >OwnerButtonComponent</a>
+                                           <a href="../components/OwnerButtonComponent.html" >OwnerButtonComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ProductComponent.html" >ProductComponent</a>
@@ -436,7 +436,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>OwnerButtonComponent</li>
+  <li>CommentComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -461,7 +461,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/store/owner-button/owner-button.component.ts</code>
+    <code>src/app/store/comments/comment/comment.component.ts</code>
 </p>
 
 
@@ -492,19 +492,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-owner-button</code></td>
+                <td class="col-md-9"><code>app-comment</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>owner-button.component.css</code></td>
+                <td class="col-md-9"><code>comment.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./owner-button.component.html</code></td>
+                <td class="col-md-9"><code>./comment.component.html</code></td>
             </tr>
 
 
@@ -530,6 +530,26 @@
                         </ul>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#message">message</a>
+                            </li>
+                            <li>
+                                <a href="#title">title</a>
+                            </li>
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>
@@ -545,7 +565,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/store/owner-button/owner-button.component.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/store/comments/comment/comment.component.ts:17</a></div>
                                 </td>
                             </tr>
     
@@ -553,6 +573,72 @@
             </table>
     </section>
 
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="message"></a>
+                            <code>message</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/store/comments/comment/comment.component.ts:14</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="title"></a>
+                            <code>title</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/store/comments/comment/comment.component.ts:11</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="user"></a>
+                            <code>user</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/store/comments/comment/comment.component.ts:17</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+    </section>
 
 
 
@@ -584,7 +670,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/store/owner-button/owner-button.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/store/comments/comment/comment.component.ts:21</a></div>
                                 </td>
                             </tr>
     
@@ -606,14 +692,23 @@
 
 
     <div class="tab-pane fade tab-source-code" id="c-source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-owner-button&#x27;,
-  templateUrl: &#x27;./owner-button.component.html&#x27;,
-  styleUrls: [&#x27;./owner-button.component.css&#x27;]
+  selector: &#x27;app-comment&#x27;,
+  templateUrl: &#x27;./comment.component.html&#x27;,
+  styleUrls: [&#x27;./comment.component.css&#x27;]
 })
-export class OwnerButtonComponent implements OnInit {
+export class CommentComponent implements OnInit {
+
+  @Input()
+  title: string;
+
+  @Input()
+  message: string;
+
+  @Input()
+  user: string;
 
   constructor() { }
 
@@ -625,7 +720,13 @@ export class OwnerButtonComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade" id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-button style&#x3D;&quot;width: 2000px;&quot;&gt;OWNER&lt;/app-button&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;comment-container container&quot;&gt;
+  &lt;p class&#x3D;&quot;author-lbl&quot;&gt;~{{user}}&lt;/p&gt;
+  &lt;p class&#x3D;&quot;title-lbl&quot;&gt;{{title}}&lt;/p&gt;
+  &lt;div class&#x3D;&quot;content-container&quot;&gt;
+    &lt;p class&#x3D;&quot;content-txt&quot;&gt;{{message}}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade" id="c-tree">
@@ -651,10 +752,10 @@ export class OwnerButtonComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-button style="width: 2000px;">OWNER</app-button></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="comment-container container">  <p class="author-lbl">~{{user}}</p>  <p class="title-lbl">{{title}}</p>  <div class="content-container">    <p class="content-txt">{{message}}</p>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CommentComponent', 'selector': 'app-comment'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'OrderButtonComponent', 'selector': 'app-order-button'},{'name': 'OwnerButtonComponent', 'selector': 'app-owner-button'},{'name': 'ProductComponent', 'selector': 'app-product'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ShopComponent', 'selector': 'app-shop'},{'name': 'ShopsComponent', 'selector': 'app-shops'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'ThumbnailComponent', 'selector': 'app-thumbnail'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'OwnerButtonComponent'};
+    var ACTUAL_COMPONENT = {'name': 'CommentComponent'};
 </script>
 <script src="../js/tree.js"></script>
 

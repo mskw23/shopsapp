@@ -91,7 +91,7 @@
                                     <a href="../components/CommentComponent.html" >CommentComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/CommentsComponent.html" >CommentsComponent</a>
+                                    <a href="../components/CommentsComponent.html"  data-type="entity-link" class="active" >CommentsComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/DetailsComponent.html" >DetailsComponent</a>
@@ -115,7 +115,7 @@
                                     <a href="../components/OrderButtonComponent.html" >OrderButtonComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/OwnerButtonComponent.html"  data-type="entity-link" class="active" >OwnerButtonComponent</a>
+                                    <a href="../components/OwnerButtonComponent.html" >OwnerButtonComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ProductComponent.html" >ProductComponent</a>
@@ -298,7 +298,7 @@
                                            <a href="../components/CommentComponent.html" >CommentComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/CommentsComponent.html" >CommentsComponent</a>
+                                           <a href="../components/CommentsComponent.html"  data-type="entity-link" class="active" >CommentsComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/DetailsComponent.html" >DetailsComponent</a>
@@ -322,7 +322,7 @@
                                            <a href="../components/OrderButtonComponent.html" >OrderButtonComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/OwnerButtonComponent.html"  data-type="entity-link" class="active" >OwnerButtonComponent</a>
+                                           <a href="../components/OwnerButtonComponent.html" >OwnerButtonComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ProductComponent.html" >ProductComponent</a>
@@ -436,7 +436,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>OwnerButtonComponent</li>
+  <li>CommentsComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -461,7 +461,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/store/owner-button/owner-button.component.ts</code>
+    <code>src/app/store/comments/comments.component.ts</code>
 </p>
 
 
@@ -492,19 +492,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-owner-button</code></td>
+                <td class="col-md-9"><code>app-comments</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>owner-button.component.css</code></td>
+                <td class="col-md-9"><code>comments.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./owner-button.component.html</code></td>
+                <td class="col-md-9"><code>./comments.component.html</code></td>
             </tr>
 
 
@@ -518,6 +518,20 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isAuthenticated">isAuthenticated</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
                         <h6><b>Methods</b></h6>
                     </td>
                 </tr>
@@ -525,7 +539,27 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#addToComments">addToComments</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#comments">comments</a>
+                            </li>
+                            <li>
+                                <a href="#shopId">shopId</a>
                             </li>
                         </ul>
                     </td>
@@ -540,19 +574,88 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor()</code>
+                            <code>constructor(authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
                         </td>
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/store/owner-button/owner-button.component.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/store/comments/comments.component.ts:17</a></div>
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>authService</td>
+                                                      <td>
+                                                                <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
 
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="comments"></a>
+                            <code>comments</code>
+                        </td>
+                        <td class="col-md-10">
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/store/comments/comments.component.ts:15</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="shopId"></a>
+                            <code>shopId</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/store/comments/comments.component.ts:12</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+    </section>
 
 
 
@@ -562,6 +665,71 @@
             <h3 id="methods">
                 Methods
             </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="addToComments"></a>
+                            <span class="name">
+                                <b>
+                                addToComments
+                                </b>
+                                <a href="#addToComments"><span class="fa fa-link"></span></a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>addToComments(comment: )</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/store/comments/comments.component.ts:25</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>comment</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
@@ -584,7 +752,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/store/owner-button/owner-button.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/store/comments/comments.component.ts:29</a></div>
                                 </td>
                             </tr>
     
@@ -601,21 +769,77 @@
             </table>
     </section>
 
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="isAuthenticated"></a>
+                            <span class="name">
+                                <b>
+                                isAuthenticated
+                                </b>
+                                <a href="#isAuthenticated"><span class="fa fa-link"></span></a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>isAuthenticated:     <code></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>false</code>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/store/comments/comments.component.ts:17</a></div>
+                                </td>
+                            </tr>
+    
+    
+                </tbody>
+            </table>
+    </section>
 
 </div>
 
 
     <div class="tab-pane fade tab-source-code" id="c-source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit ,Input } from &#x27;@angular/core&#x27;;
+import { AuthService } from &#x27;../../auth.service&#x27;;
 
 @Component({
-  selector: &#x27;app-owner-button&#x27;,
-  templateUrl: &#x27;./owner-button.component.html&#x27;,
-  styleUrls: [&#x27;./owner-button.component.css&#x27;]
+  selector: &#x27;app-comments&#x27;,
+  templateUrl: &#x27;./comments.component.html&#x27;,
+  styleUrls: [&#x27;./comments.component.css&#x27;]
 })
-export class OwnerButtonComponent implements OnInit {
+export class CommentsComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  shopId: string;
+
+  @Input()
+  comments: [{}];
+
+  isAuthenticated &#x3D; false;
+
+  constructor(private authService: AuthService) {
+    if (authService.isAuthenticated()) {
+      this.isAuthenticated &#x3D; true;
+    }
+   }
+
+  addToComments(comment) {
+    this.comments.push(comment);
+  }
 
   ngOnInit() {
   }
@@ -625,7 +849,8 @@ export class OwnerButtonComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade" id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-button style&#x3D;&quot;width: 2000px;&quot;&gt;OWNER&lt;/app-button&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;app-comment *ngFor&#x3D;&quot;let comment of comments&quot; [title]&#x3D;&quot;comment.title&quot; [message]&#x3D;&quot;comment.message&quot; [user]&#x3D;&quot;comment.user&quot;&gt;&lt;/app-comment&gt;
+&lt;app-new-comment *ngIf&#x3D;&quot;isAuthenticated&quot; [shop]&#x3D;&quot;shopId&quot; (onComentSent)&#x3D;&quot;addToComments($event)&quot;&gt;&lt;/app-new-comment&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade" id="c-tree">
@@ -651,10 +876,10 @@ export class OwnerButtonComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-button style="width: 2000px;">OWNER</app-button></div>'
+        var COMPONENT_TEMPLATE = '<div><app-comment *ngFor="let comment of comments" [title]="comment.title" [message]="comment.message" [user]="comment.user"></app-comment><app-new-comment *ngIf="isAuthenticated" [shop]="shopId" (onComentSent)="addToComments($event)"></app-new-comment></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CommentComponent', 'selector': 'app-comment'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'OrderButtonComponent', 'selector': 'app-order-button'},{'name': 'OwnerButtonComponent', 'selector': 'app-owner-button'},{'name': 'ProductComponent', 'selector': 'app-product'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ShopComponent', 'selector': 'app-shop'},{'name': 'ShopsComponent', 'selector': 'app-shops'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'ThumbnailComponent', 'selector': 'app-thumbnail'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'OwnerButtonComponent'};
+    var ACTUAL_COMPONENT = {'name': 'CommentsComponent'};
 </script>
 <script src="../js/tree.js"></script>
 

@@ -35,22 +35,11 @@ export class AuthService {
   }
 
   register(username: string, email: string, password: string) {
-    this.http.post('http://localhost:8000/api/users/register/', {username: username, email: email, password: password})
-      .subscribe(
-        (response: Response) => {
-          this.login(email, password);
-        }
-      )
+    return this.http.post('http://localhost:8000/api/users/register/', {username: username, email: email, password: password});
   }
 
   login(email: string, password: string) {
-    this.http.post('http://localhost:8000/api/users/login/', {email: email, password: password})
-      .subscribe(
-        (res: Response) => {
-          const token = res.json()['token'];
-          localStorage.setItem('token', token);
-        }
-      )
+    return this.http.post('http://localhost:8000/api/users/login/', {email: email, password: password});
   }
 
   getToken() {

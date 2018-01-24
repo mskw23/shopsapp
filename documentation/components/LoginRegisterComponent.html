@@ -88,6 +88,12 @@
                                     <a href="../components/ButtonComponent.html" >ButtonComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/CommentComponent.html" >CommentComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CommentsComponent.html" >CommentsComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/DetailsComponent.html" >DetailsComponent</a>
                                 </li>
                                 <li class="link">
@@ -101,6 +107,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/MapComponent.html" >MapComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NewCommentComponent.html" >NewCommentComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/OrderButtonComponent.html" >OrderButtonComponent</a>
@@ -286,6 +295,12 @@
                                            <a href="../components/ButtonComponent.html" >ButtonComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/CommentComponent.html" >CommentComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CommentsComponent.html" >CommentsComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/DetailsComponent.html" >DetailsComponent</a>
                                        </li>
                                        <li class="link">
@@ -299,6 +314,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/MapComponent.html" >MapComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NewCommentComponent.html" >NewCommentComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/OrderButtonComponent.html" >OrderButtonComponent</a>
@@ -1206,7 +1224,7 @@ export class LoginRegisterComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="container rect--gray">  <img src="./assets/Logo-final.png" alt="" style="float: left; margin-left: 20px; width:158px; margin-top: 20px;">  <div class="rect--color rect--login" [ngStyle]="{\'transform\': \'rotate(\'+getDegree()+\'deg)\'}">    <div class="rect--login--inner" [ngStyle]="{\'transform\': \'rotate(\'+getDegree2()+\'deg)\'}">            <div class="rect--selected login--button" *ngIf="isLogin" (click)="setLogin(true)">          <p>LOGIN</p>      </div>      <div class="login--button" *ngIf="!isLogin" (click)="setLogin(true)">          <p>LOGIN</p>      </div>          <div class="register--button" *ngIf="isLogin" (click)="setLogin(false)">          <p>REGISTER</p>      </div>      <div class="rect--selected register--button" *ngIf="!isLogin" (click)="setLogin(false)">          <p>REGISTER</p>      </div>      <div class="login--container" *ngIf="isLogin">        <form (ngSubmit)="onLogin(f)" #f="ngForm">          <input type="text" class="email--input" placeholder="email" id="email" name="email" ngModel>          <input type="password" class="password--input" placeholder="password" id="password" name="password" ngModel>          <div style="margin: 0 auto; width:fit-content">            <button type="submit">LOGIN ➜</button>              <!-- <a href="" style="text-decoration: none; ">                <p>LOGIN ➜</p>              </a> -->          </div>        </form>      </div>            <div class="register--container" *ngIf="!isLogin">        <form (ngSubmit)="onRegister(f)" #f="ngForm">          <input type="text" class="email--input" placeholder="username" id="username" name="username" ngModel>          <input type="text" class="email--input" placeholder="email" id="email" name="email" ngModel>           <input type="password" class="password--input" placeholder="password" id="password" name="password" ngModel>          <div style="margin: 0 auto; width:fit-content">              <button type="submit">REGISTER ➜</button>              <!-- <a href="" style="text-decoration: none; ">                <p>REGISTER ➜</p>              </a> -->          </div>        </form>                </div>    </div>      </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'OrderButtonComponent', 'selector': 'app-order-button'},{'name': 'OwnerButtonComponent', 'selector': 'app-owner-button'},{'name': 'ProductComponent', 'selector': 'app-product'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ShopComponent', 'selector': 'app-shop'},{'name': 'ShopsComponent', 'selector': 'app-shops'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'ThumbnailComponent', 'selector': 'app-thumbnail'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CommentComponent', 'selector': 'app-comment'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginRegisterComponent', 'selector': 'app-login-register'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'OrderButtonComponent', 'selector': 'app-order-button'},{'name': 'OwnerButtonComponent', 'selector': 'app-owner-button'},{'name': 'ProductComponent', 'selector': 'app-product'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ShopComponent', 'selector': 'app-shop'},{'name': 'ShopsComponent', 'selector': 'app-shops'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'ThumbnailComponent', 'selector': 'app-thumbnail'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginRegisterComponent'};
 </script>
